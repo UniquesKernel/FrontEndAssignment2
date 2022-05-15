@@ -1,0 +1,30 @@
+.App {
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.active {
+    color: #00f;
+    font-weight: bold;
+}
+
+main {
+    background-color: darkkhaki;
+}
+
+nav a {
+    margin: 0.2rem;
+    text-decoration: none;
+}
+
+button {
+    margin: 0.2rem;
+    font-size: 1.5rem;
+}
+
+.btn {
+    margin: 0.2rem;
+    background-color: deepskyblue;
+    font-size: 2rem;
+    border-radius: 10px;
+}

@@ -1,0 +1,96 @@
+.react-hooks-form {
+    background: #0e101c;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+      "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+      sans-serif;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .react-hooks-form form {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  
+  .react-hooks-form h1 {
+    font-weight: 100;
+    color: white;
+    text-align: center;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgb(79, 98, 148);
+  }
+  
+  .form {
+    background: #0e101c;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  
+  .react-hooks-form p {
+    color: #bf1650;
+  }
+  
+  p::before {
+    display: inline;
+    content: "⚠ ";
+  }
+  
+  .react-hooks-form input {
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    border-radius: 4px;
+    border: 1px solid white;
+    padding: 10px 15px;
+    margin-bottom: 10px;
+    font-size: 14px;
+  }
+  
+  .react-hooks-form label {
+    line-height: 2;
+    text-align: left;
+    display: block;
+    margin-bottom: 13px;
+    margin-top: 20px;
+    color: white;
+    font-size: 14px;
+    font-weight: 200;
+  }
+  
+  .react-hooks-form input[type="submit"] {
+    background: #ec5990;
+    color: white;
+    text-transform: uppercase;
+    border: none;
+    margin-top: 40px;
+    padding: 20px;
+    font-size: 16px;
+    font-weight: 100;
+    letter-spacing: 10px;
+  }
+  
+  .react-hooks-form input[type="submit"]:hover {
+    background: #bf1650;
+  }
+  
+  .react-hooks-form input[type="button"]:active,
+  .react-hooks-form input[type="submit"]:active {
+    transition: 0.3s all;
+    transform: translateY(3px);
+    border: 1px solid transparent;
+    opacity: 0.8;
+  }
+  
+  .react-hooks-form input:disabled {
+    opacity: 0.4;
+  }
+  
+  .react-hooks-form input[type="button"]:hover {
+    transition: 0.3s all;
+  }
+  
+  .react-hooks-form input[type="button"],
+  .react-hooks-form input[type="submit"] {
+    -webkit-appearance: none;
+  }
+  
