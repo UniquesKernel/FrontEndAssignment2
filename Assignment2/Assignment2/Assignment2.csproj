@@ -25,6 +25,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="ClientApp\src\components\Manager\NewFolder\" />
     <Folder Include="ClientApp\src\components\Model\" />
     <Folder Include="Controllers\" />
   </ItemGroup>

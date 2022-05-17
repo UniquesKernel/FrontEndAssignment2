@@ -17,18 +17,18 @@ export default function Login() {
     }
 
     return (
-        <div className="Wrapper">
+        <div class="Wrapper">
             <h1> Please Login </h1>
             <form onSubmit={handleSubmit}>
-                <label className="Login">
+                <label class="Login">
                     <p> Email </p>
                     <input type="text" onChange={e => setEmail(e.target.value)}/>
                 </label>
-                <label className="Login">
+                <label class="Login">
                     <p> Password </p>
                     <input type="password" onChange={e => SetPassword(e.target.value)} />
                 </label>
-                <div className="submitButton">
+                <div class="submitButton">
                     <button type="submit">Submit</button>
                 </div>
             </form>
