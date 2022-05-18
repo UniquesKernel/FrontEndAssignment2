@@ -1,20 +1,12 @@
-import React, { Component } from 'react';
-import { useState } from 'react';
+import React from 'react';
 import { NavigationBar } from './components/NavigationBar/NavigationBar.js'
 import Login from './components/Login/Login.js'
 import {LogOut} from './components/Logout/Logout.js'
 import { Home } from './components/Home';
-import { Manager }from './components/Manager/Manager.js'
-import {
-    BrowserRouter,
-    Switch,
-    Route,
-    NavLink
-} from "react-router-dom";
+import { Manager } from './components/Manager/Manager.js'
+import { Model } from './components/Model/Model.js';
 import './custom.css'
-import { Navbar } from 'reactstrap';
 import jwtDecode from 'jwt-decode';
-import { CreateUser } from './components/Manager/CreateUser.js';
 
 export default function App() {
     let token = localStorage.getItem("token");
@@ -34,7 +26,7 @@ export default function App() {
         );
     }
 
-    if (role = "Manager") {
+    if (role === "Manager") {
         return (
             <>
                 <Manager/>
@@ -42,10 +34,10 @@ export default function App() {
         )
     }
 
-    if (role = "Model") {
+    if (role === "Model") {
         return (
             <>
-                <NavigationBar/>
+                <Model/>
             </>
             )
     }

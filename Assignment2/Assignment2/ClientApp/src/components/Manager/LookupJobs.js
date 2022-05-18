@@ -1,20 +1,46 @@
 ﻿import React from 'react';
 import { useState } from 'react';
 import { InputField } from '../InputField.js';
-import './CreateUser.css';
-import ReactDOM from "react-dom";
-import DataTable from "react-data-table-component";
-import DataTableExtensions from "react-data-table-component-extensions";
-import "react-data-table-component-extensions/dist/index.css";
+import './LookupJobs.css';
 
 export function LookupJobs() {
     const [jsonObject, setJsonObject] = useState();
+    const jobList = []
+    let modelList = [];
 
     const handleGetJobs = async e => {
         let json = await GetJobs();
         json = Object.values(json);
         setJsonObject(json);
-        console.log(jsonObject);
+    }
+
+
+
+
+    for (let job in jsonObject) {
+        modelList = [];
+        for (let model in jsonObject[job].models) {
+            const modelRow = (
+                <tr>
+                    <td className="jobRow"> {jsonObject[job].models[model].firstName + " " + jsonObject[job].models[model].lastName}</td>
+                </tr>
+            );
+
+            modelList.push(modelRow)
+
+        }
+        console.log(modelList)
+        const row = (
+            <tr id={jsonObject[job].jobId}>
+                <td className="jobRow"> {jsonObject[job].jobId} </td>
+                <td className="jobRow"> {jsonObject[job].customer} </td>
+                <td className="jobRow"> {jsonObject[job].days} </td>
+                <td className="jobRow"> {jsonObject[job].location} </td>
+                <td className="jobRow"> {jsonObject[job].comments} </td>
+                {modelList}
+            </tr>
+        );
+        jobList.push(row);
     }
 
     return (
@@ -24,69 +50,37 @@ export function LookupJobs() {
                 <thead>
                     <tr>
                         <th> Job Id </th>
-                        <th> Job Id </th>
-                        <th> Job Id </th>
-                        <th> Job Id </th>
+                        <th> Customer </th>
+                        <th> Days </th>
+                        <th> Location </th>
+                        <th> Comments </th>
+                        <th> Models </th>
                     </tr>
                 </thead>
                 <tbody>
+                    {jobList}
                 </tbody>
             </table>
-            </div>
+            <button type="submit" onClick={handleGetJobs}>Load Jobs</button>
+        </div>
     )
 }
 
 async function GetJobs() {
     let url = 'https://localhost:7181/api/Jobs'
-    try {
-        let responds = await fetch(url,
-            {
-                method: 'GET',
-                credentials: 'include',
-                headers: new Headers({
-                    'Authorization': 'Bearer ' + localStorage.getItem("token"),
-                    'Content-Type': 'application/json'
-                })
-            });
-
-        if (responds.ok) {
-            alert("Hurray");
-            return await responds.json();
-        }
-        else {
-            alert("Server returned: " + responds.statusText);
-        }
-    } catch (err) {
-        alert("Error: " + err);
-    }
-    return;
-
+    return fetch(url,
+        {
+            method: 'GET',
+            credentials: 'include',
+            headers: new Headers({
+                'Authorization': 'Bearer ' + localStorage.getItem("token"),
+                'Content-Type': 'application/json'
+            })
+        })
+        .then((response) => response.json())
+        .then((responseData) => {
+            return responseData;
+        })
+        .catch(error => console.warn(error));
 }
 
-export const columns = [
-    {
-        name: "JobId",
-        selector: "jobId",
-        sortable: true
-    },
-    {
-        name: "Customer",
-        selector: "customer",
-        sortable: true
-    },
-    {
-        name: "Days",
-        selector: "days",
-        sortable: true,
-    },
-    {
-        name: "Location",
-        selector: "location",
-        sortable: true
-    },
-    {
-        name: "Comments",
-        selector: "comments",
-        sortable: true
-    }
-];
