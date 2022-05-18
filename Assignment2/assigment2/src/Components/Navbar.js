@@ -25,6 +25,9 @@ export function Navbar() {
                 <NavLink to="/logout"  >
                     Logout
                 </NavLink>
+                <NavLink to="/jobslist"  >
+                    Jobs List
+                </NavLink>
             </nav>
         );
 

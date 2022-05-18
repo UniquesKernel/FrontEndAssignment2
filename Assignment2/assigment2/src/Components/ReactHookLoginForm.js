@@ -2,10 +2,9 @@ import './ReactHookLoginForm.css';
 import { useForm } from 'react-hook-form';
 
 export function ReactHookLoginForm() {
-  const { register, handleSubmit } = useForm();
+    const { register, handleSubmit } = useForm();
     const onSubmit = (data) => {
         let url = "https://localhost:7181/api/Account/login"
-
         fetch(url, {
             method: "POST",
             body: JSON.stringify(data),
@@ -21,7 +20,7 @@ export function ReactHookLoginForm() {
                     });
                 }
                 else {
-                    return response.json();
+                    return response.json(); 
                 }
             })
         .then(

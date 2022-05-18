@@ -7,6 +7,7 @@ import {
 import { Navbar } from './Components/Navbar';
 import { ReactHookLoginForm } from './Components/ReactHookLoginForm';
 import { Home } from './Components/Home';
+import { JobsListTable } from './Components/JobsListTable';
 
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
                   <Route path="/" element={<Home />} />
                   <Route path="/reacthookloginform" element={<ReactHookLoginForm />} />
                   <Route path="/logout" element={<LogOut />} />
+                  <Route path="/jobslist" element={<JobsListTable />} />
             </Routes>
         </Router>
      </div>
