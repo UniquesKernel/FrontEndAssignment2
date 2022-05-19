@@ -6,7 +6,7 @@ export function GetData(url, endPoint){
         method: 'GET',
         credentials: 'include',
         headers: new Headers({
-            'Authorization': 'Bearer ' + localStorage.getItem("token"),
+            'Authorization': 'Bearer ' + localStorage.getItem("loginToken"),
             'Content-Type': 'application/json'
         })
     })

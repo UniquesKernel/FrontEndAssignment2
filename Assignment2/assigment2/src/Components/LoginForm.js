@@ -1,7 +1,7 @@
-import './ReactHookLoginForm.css';
+import './LoginForm.css';
 import { useForm } from 'react-hook-form';
 
-export function ReactHookLoginForm() {
+export function LoginForm() {
     const { register, handleSubmit } = useForm();
     const onSubmit = (data) => {
         let url = "https://localhost:7181/api/Account/login"

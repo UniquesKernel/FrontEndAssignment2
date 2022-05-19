@@ -5,10 +5,15 @@ import {
     Route,
 } from "react-router-dom";
 import { Navbar } from './Components/Navbar';
-import { ReactHookLoginForm } from './Components/ReactHookLoginForm';
+import { LoginForm } from './Components/LoginForm';
+import { PostJobToModel } from './Components/Manager/PostJobToModel';
 import { Home } from './Components/Home';
 import { JobsListTable } from './Components/JobsListTable';
-
+import { CreateJob } from './Components/Manager/CreateJob'
+import { CreateModel } from './Components/Manager/CreateModel'
+import { CreateManager } from './Components/Manager/CreateManager'
+import { DeleteJobFromModel } from './Components/Manager/DeleteJobFromModel'
+ 
 
 function App() {
   return (
@@ -18,9 +23,15 @@ function App() {
               <Navbar />
               <Routes>
                   <Route path="/" element={<Home />} />
-                  <Route path="/reacthookloginform" element={<ReactHookLoginForm />} />
+                  <Route path="/loginform" element={<LoginForm />} />
                   <Route path="/logout" element={<LogOut />} />
                   <Route path="/jobslist" element={<JobsListTable />} />
+                  <Route path="/postjobtomodel" element={<PostJobToModel />} />
+                  <Route path="/createjob" element={<CreateJob />} />
+                  <Route path="/createmodel" element={<CreateModel />} />
+                  <Route path="/createmanager" element={<CreateManager />} />
+                  <Route path="/deletejobfrommodel" element={<DeleteJobFromModel />} />
+
             </Routes>
         </Router>
      </div>

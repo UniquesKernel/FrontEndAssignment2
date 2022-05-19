@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState, useEffect} from 'react';
-import DataTable from "react-data-table-component";
+import DataTable, { ExpanderComponentProps } from 'react-data-table-component';
 import "react-data-table-component-extensions/dist/index.css";
 import { GetData } from './GetData';
 import { url } from './ApiVars';
@@ -15,6 +15,7 @@ export function JobsListTable() {
             .then(data => { setData(data) });
     }, []);
 
+    console.log(data)
     return (
         <div className="main" >
             <DataTable
@@ -59,6 +60,11 @@ export const columns = [
     {
         name: "Location",
         selector: "location",
+        sortable: true
+    },
+    {
+        name: "StartDate",
+        selector: "startDate",
         sortable: true
     }
 ];
